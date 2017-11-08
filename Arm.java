@@ -2,7 +2,9 @@ import java.awt.*;
 import javax.swing.JFrame;
 
 public class Arm extends JFrame {
-
+	
+	double time, dt;
+	
 	public Arm() {
 		init();
 	}
@@ -10,18 +12,26 @@ public class Arm extends JFrame {
 	public void init() {
 		setSize(700,600);
 		setBackground(Color.WHITE);
+		time = 0.0;
+		dt = 0.1;
 		repaint();
 	}
-
+	
 	public void paint(Graphics g) {
-		//forearm
+		time += dt;
+
 		g.setColor(Color.BLACK);
-		g.fillRect(300, 300, 200, 40);
-		//elbow
-		g.setColor(Color.BLACK);
-		g.fillOval(260, 300, 50, 40);
-		//arm
-		g.setColor(Color.BLACK);
-		g.fillRect(260, 110, 40, 200);
+		g.drawOval(350, (int)(50+time), 200, 100);
+
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		g.setColor(Color.WHITE);
+		g.drawOval(350, (int)(50+time), 200, 100);
+
+		repaint();
 	}
 }
