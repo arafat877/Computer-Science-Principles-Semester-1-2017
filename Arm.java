@@ -34,4 +34,20 @@ public class Arm extends JFrame {
 
 		repaint();
 	}
+	
+	public void incrementTime(){
+		
+	}
+	
+	public void drawCircle(){
+		
+	}
+	
+	public void restTen(){
+		
+	}
+	
+	public void eraseCircle(){
+		
+	}
 }
