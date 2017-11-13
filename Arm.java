@@ -18,36 +18,33 @@ public class Arm extends JFrame {
 	}
 	
 	public void paint(Graphics g) {
+		incrementTime();
+		drawCircle(g);
+		restTen();
+		eraseCircle(g);
+		repaint();
+	}
+	
+	public void incrementTime(){
 		time += dt;
-
+	}
+	
+	public void drawCircle(Graphics g){
 		g.setColor(Color.BLACK);
-		g.drawOval(350, (int)(50+time), 200, 100);
-
+		g.drawOval(300, 50, (int)(50+time), (int)(50+time));
+	}
+	
+	public void restTen(){
 		try {
 			Thread.sleep(10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
+	}
+	
+	public void eraseCircle(Graphics g){
 		g.setColor(Color.WHITE);
-		g.drawOval(350, (int)(50+time), 200, 100);
+		g.drawOval(300, 50, (int)(50+time), (int)(50+time));
 
-		repaint();
-	}
-	
-	public void incrementTime(){
-		
-	}
-	
-	public void drawCircle(){
-		
-	}
-	
-	public void restTen(){
-		
-	}
-	
-	public void eraseCircle(){
-		
 	}
 }
