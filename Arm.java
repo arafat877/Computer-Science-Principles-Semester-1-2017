@@ -19,11 +19,19 @@ public class Arm extends JFrame {
 
 	public void paint(Graphics g) {
 		incrementTime();
+		drawSSquare(g);
 		drawCircle(g);
+		drawOOval(g);
 		drawTriangle(g);
+		drawTTriangle(g);
 		restTen();
 		eraseCircle(g);
 		eraseTriangle(g);
+		eraseOOval(g);
+		eraseTTriangle(g);
+		drawSQUARE(g, 10);
+		drawSquare(g);
+		eraseSQUARE(g, 10);
 		repaint();
 	}
 
@@ -39,34 +47,97 @@ public class Arm extends JFrame {
 	public void drawTriangle(Graphics g){
 		double xOfCircle = Math.cos(time);
 		double yOfCircle = Math.sin(time);
-		
+
 		int[] xp = {(int)(xOfCircle * 100.0) + 200, 100 + 200, 100 + 200};
 		int[] yp = {(int) (yOfCircle * 100.0) + 100, 50 + 100, 50 + 100};
+		g.setColor(Color.BLACK);
 		g.drawPolygon(xp, yp, 3);
-		
+
 	}
-	
+
 	public void eraseTriangle(Graphics g){
 		double xOfCircle = Math.cos(time);
 		double yOfCircle = Math.sin(time);
-		
+
 		int[] xp = {(int)(xOfCircle * 100.0) + 200, 100 + 200, 100 + 200};
 		int[] yp = {(int) (yOfCircle * 100.0) + 100, 50 + 100, 50 + 100};
 		g.setColor(Color.WHITE);
 		g.drawPolygon(xp, yp, 3);
 	}
 
-		public void restTen(){
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+	public void drawTTriangle(Graphics g){
+		int[] xp = {400, 500, 600};
+		int[] yp = {400, 200, 200};
+		g.setColor(Color.BLACK);
+		g.drawPolygon(xp, yp, 3);
+	}
 
-		public void eraseCircle(Graphics g){
-			g.setColor(Color.WHITE);
-			g.drawOval(300, 50, (int)(50+time), (int)(50+time));
+	public void eraseTTriangle(Graphics g){
+		int[] xp = {400, 500, 600};
+		int[] yp = {400, 200, 200};
+		g.setColor(Color.WHITE);
+		g.drawPolygon(xp, yp, 3);
+
+	}
+
+	public void drawSquare(Graphics g){
+		g.setColor(Color.BLACK);
+		g.drawRect(400, 200, 200, 200);
+	}
+
+	public void drawSQUARE(Graphics g, int num){
+		for(int i = 0; i < num; i++){
+			int k = 0;
+			g.setColor(Color.BLACK);
+			g.drawRect((int) (25 + time), (int) (25 + time), 100 + (k*100), 100 + (k*100));
+			k++;
 
 		}
 	}
+
+	public void eraseSQUARE(Graphics g, int num){
+		for(int i = 0; i < num; i++){
+			int k = 0;
+			g.setColor(Color.WHITE);
+			g.drawRect((int) (50 + time), (int) (50 + time), 100 + (k*100), 100 + (k*100));
+			k++;
+
+		}
+	}
+	
+	public void drawSSquare(Graphics g){
+		double xOfCircle = Math.cos(time);
+		double yOfCircle = Math.sin(time);
+		g.setColor(Color.BLACK);
+		g.drawRect((int) (xOfCircle * 100.0) + 200, (int) (yOfCircle * 100.0) + 200, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0) + 100);
+	}
+
+
+	public void restTen(){
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void eraseCircle(Graphics g){
+		g.setColor(Color.WHITE);
+		g.drawOval(300, 50, (int)(50+time), (int)(50+time));
+
+	}
+
+	public void drawOOval(Graphics g){
+		double xOfCircle = Math.cos(time);
+		double yOfCircle = Math.sin(time);
+		g.setColor(Color.BLACK);
+		g.drawOval(300, 100, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
+
+	}
+	public void eraseOOval(Graphics g){
+		double xOfCircle = Math.cos(time);
+		double yOfCircle = Math.sin(time);
+		g.setColor(Color.WHITE);
+		g.drawOval(300, 100, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
+	}
+}
