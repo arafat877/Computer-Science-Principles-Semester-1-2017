@@ -1,6 +1,9 @@
 import java.awt.*;
 import javax.swing.JFrame;
 import java.util.Scanner;
+import java.awt.event.*;
+import javax.swing.*;
+
 
 public class ArrowSquare extends JFrame {
 	double time, dt;
@@ -19,7 +22,7 @@ public class ArrowSquare extends JFrame {
 
 	public void paint(Graphics g) {
 		incrementTime();
-		left(g);
+		
 		repaint();
 		System.out.println(time);
 
@@ -52,15 +55,21 @@ public class ArrowSquare extends JFrame {
 		restTen();
 		eraseFirstSquare(g, 1,0);
 	}
-
-	public void left(Graphics g){
-		Scanner user_input = new Scanner(System.in);
-		String input;
-		System.out.print("Type:");
-		input = user_input.next();
-
-		if (input == "w"){
+	
+	public void keyPressed(KeyEvent e, Graphics g) {
+		switch (e.getKeyCode()) {
+		case KeyEvent.VK_UP:
 			arrowSquare(g);
+			break;
+		case KeyEvent.VK_DOWN:
+			// down arrow
+			break;
+		case KeyEvent.VK_RIGHT:
+			// right arrow
+			break;
+		case KeyEvent.VK_LEFT:
+			// left arrow
+			break;
 		}
 	}
 
