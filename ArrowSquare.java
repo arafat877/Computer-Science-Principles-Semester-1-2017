@@ -74,8 +74,9 @@ public class ArrowSquare extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ArrowSquare e = new ArrowSquare();
+		e.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		e.setVisible(true);
 	}
 
 }

@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.JFrame;
 
 public class CowFrame extends JFrame {
-	
+
 	private final Color BISQUE = new Color(0xb59b6a);
 
 	public CowFrame () {
@@ -33,5 +33,11 @@ public class CowFrame extends JFrame {
 		g.setColor(Color.BLACK);
 		g.fillOval(400, 400, 100, 50);
 	}
-	 
+
+	public static void main(String[] args) {
+		CowFrame c = new CowFrame();
+		c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		c.setVisible(true);
+	}
+
 }

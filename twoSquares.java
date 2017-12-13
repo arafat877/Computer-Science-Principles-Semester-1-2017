@@ -23,7 +23,7 @@ public class twoSquares extends JFrame {
 		yesIntersect(g);
 		repaint();
 		System.out.println(time);
-		
+
 	}
 
 	public void incrementTime(){
@@ -100,11 +100,12 @@ public class twoSquares extends JFrame {
 			eraseFourthRect(g, -1);
 		}
 	}
-	
+
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		twoSquares d = new twoSquares();
+		d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		d.setVisible(true);
 
 	}
 

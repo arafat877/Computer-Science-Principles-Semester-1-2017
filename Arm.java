@@ -104,7 +104,7 @@ public class Arm extends JFrame {
 
 		}
 	}
-	
+
 	public void drawSSquare(Graphics g){
 		double xOfCircle = Math.cos(time);
 		double yOfCircle = Math.sin(time);
@@ -139,5 +139,11 @@ public class Arm extends JFrame {
 		double yOfCircle = Math.sin(time);
 		g.setColor(Color.WHITE);
 		g.drawOval(300, 100, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
+	}
+
+	public static void main(String[] args) {
+		Arm k = new Arm();
+		k.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		k.setVisible(true);
 	}
 }
