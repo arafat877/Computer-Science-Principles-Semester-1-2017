@@ -20,6 +20,7 @@ public class RotateSquare extends JFrame {
 	public void paint(Graphics g) {
 		incrementTime();
 		drawSquare(g);
+		eraseSquare(g);
 		repaint();
 	}
 
@@ -54,9 +55,19 @@ public class RotateSquare extends JFrame {
 		double xOfCircle = Math.cos(time);
 		double yOfCircle = Math.sin(time);
 
-		int[] xp = {100, 200, 200, 100};
-		int[] yp = {100, 200, 300, 300};
+		int[] xp = {(int)(xOfCircle * 50.0) + 200, (int)(xOfCircle * 50.0) + 300, (int)(xOfCircle * 50.0) + 300, (int)(xOfCircle * 50.0) + 200};
+		int[] yp = {(int)(yOfCircle * 50.0) + 200, (int)(yOfCircle * 50.0) + 200, (int)(yOfCircle * 50.0) + 300, (int)(yOfCircle * 50.0) + 300};
 		g.setColor(Color.BLACK);
+		g.drawPolygon(xp, yp, 4);
+	}
+	
+	public void eraseSquare(Graphics g){
+		double xOfCircle = Math.cos(time);
+		double yOfCircle = Math.sin(time);
+
+		int[] xp = {(int)(xOfCircle * 50.0) + 200, (int)(xOfCircle * 50.0) + 300, (int)(xOfCircle * 50.0) + 300, (int)(xOfCircle * 50.0) + 200};
+		int[] yp = {(int)(yOfCircle * 50.0) + 200, (int)(yOfCircle * 50.0) + 200, (int)(yOfCircle * 50.0) + 300, (int)(yOfCircle * 50.0) + 300};
+		g.setColor(Color.WHITE);
 		g.drawPolygon(xp, yp, 4);
 	}
 
