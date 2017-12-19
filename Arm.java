@@ -19,19 +19,12 @@ public class Arm extends JFrame {
 
 	public void paint(Graphics g) {
 		incrementTime();
-		drawSSquare(g);
+		drawSquare(g);
 		drawCircle(g);
 		drawOOval(g);
-		drawTriangle(g);
-		drawTTriangle(g);
 		restTen();
-		eraseCircle(g);
-		eraseTriangle(g);
 		eraseOOval(g);
-		eraseTTriangle(g);
-		drawSQUARE(g, 10);
-		drawSquare(g);
-		eraseSQUARE(g, 10);
+		eraseCircle(g);
 		repaint();
 	}
 
@@ -131,14 +124,14 @@ public class Arm extends JFrame {
 		double xOfCircle = Math.cos(time);
 		double yOfCircle = Math.sin(time);
 		g.setColor(Color.BLACK);
-		g.drawOval(300, 100, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
+		g.drawOval(100, 200, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
 
 	}
 	public void eraseOOval(Graphics g){
 		double xOfCircle = Math.cos(time);
 		double yOfCircle = Math.sin(time);
 		g.setColor(Color.WHITE);
-		g.drawOval(300, 100, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
+		g.drawOval(100, 200, (int) (xOfCircle * 100.0) + 100, (int) (yOfCircle * 100.0));
 	}
 
 	public static void main(String[] args) {
