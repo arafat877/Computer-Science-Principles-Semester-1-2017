@@ -1,3 +1,3 @@
-# Computer-Science-Principles 2017-2018
+# Computer-Science-Principles First Semester 2017
 
 Java code from CS Principles
